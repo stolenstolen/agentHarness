@@ -8,6 +8,10 @@ if [ "$branch" = "main" ]; then
   exit 1
 fi
 
+if [ "$branch" = "develop" ]; then
+  exit 0
+fi
+
 if ! echo "$branch" | grep -Eq "$pattern"; then
   echo "Неверное имя ветки: $branch"
   echo "Формат: <тип>/<описание>, см. docs/contributing/branch.md"
